@@ -1,0 +1,177 @@
+/* BentoGrid.css */
+.bento-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #0a0a0f, #000000);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.bento-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(168, 85, 247, 0.1) 0%, 
+    rgba(79, 70, 229, 0.1) 50%, 
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+
+.bento-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(168, 85, 247, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bento-item:hover::before {
+  opacity: 1;
+}
+
+.bento-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.company-logo {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Logo hover animation */
+.bento-item:hover .company-logo {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+/* Text hover animation */
+.bento-item:hover .company-name {
+  transform: translateY(-5px);
+  color: #a855f7;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .bento-item {
+    padding: 2.5rem 1.5rem;
+    min-height: 180px;
+  }
+  
+  .company-logo {
+    font-size: 3.5rem;
+  }
+  
+  .company-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-section {
+    padding: 4rem 1rem;
+  }
+  
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .bento-item {
+    padding: 2rem 1rem;
+    min-height: 150px;
+  }
+  
+  .company-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .company-name {
+    font-size: 1.2rem;
+  }
+}
+
+/* Optional: Add staggered animation on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bento-item {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.bento-item:nth-child(1) { animation-delay: 0.1s; }
+.bento-item:nth-child(2) { animation-delay: 0.2s; }
+.bento-item:nth-child(3) { animation-delay: 0.3s; }
+.bento-item:nth-child(4) { animation-delay: 0.4s; }
+.bento-item:nth-child(5) { animation-delay: 0.5s; }
+.bento-item:nth-child(6) { animation-delay: 0.6s; }
