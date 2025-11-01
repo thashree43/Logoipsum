@@ -33,7 +33,6 @@ const Scroll = () => {
     let currentIndex = 0;
     let wordIndex = 0;
     
-    // Split the entire text into individual words
     const allWords = fullText.split(/(\s+)/);
     
     allWords.forEach((word, index) => {
@@ -60,7 +59,7 @@ const Scroll = () => {
             style={{
               cursor: 'pointer',
               display: 'inline',
-              color: '#6b7280', // Grey color by default
+              color: '#6b7280', 
               fontWeight: 'normal',
               transition: 'all 0.3s ease',
               whiteSpace: 'pre-wrap'
@@ -71,7 +70,6 @@ const Scroll = () => {
         );
         wordIndex++;
       } else {
-        // Regular text - also hoverable
         elements.push(
           <span 
             key={`text-${index}`}
@@ -100,8 +98,8 @@ const Scroll = () => {
     setHoveredWord(word);
     
     gsap.to(e.currentTarget, {
-      fontWeight: 700, // Bold on hover for ALL words
-      color: '#ffffff', // White color on hover for ALL words
+      fontWeight: 700, 
+      color: '#ffffff', 
       duration: 0.2,
       ease: 'power2.out'
     });
@@ -111,15 +109,14 @@ const Scroll = () => {
     setHoveredWord(null);
     
     gsap.to(e.currentTarget, {
-      fontWeight: 'normal', // Back to normal weight
-      color: '#6b7280', // Back to grey color
+      fontWeight: 'normal', 
+      color: '#6b7280', 
       duration: 0.2,
       ease: 'power2.out'
     });
   };
 
   useEffect(() => {
-    // Scroll Section Animation - Reversible
     gsap.fromTo(
       scrollTextRef.current,
       { opacity: 0, y: 50 },
@@ -138,7 +135,6 @@ const Scroll = () => {
       }
     );
 
-    // Individual word reveal on scroll
     wordRefs.current.forEach((word) => {    
       if (word) {
         gsap.fromTo(
@@ -151,8 +147,8 @@ const Scroll = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: word,
-              start: 'top 90%', // Adjusted for shorter height
-              end: 'top 40%',   // Adjusted for shorter height
+              start: 'top 90%',
+              end: 'top 40%',   
               toggleActions: 'play reverse play reverse',
               scrub: 0.3
             }
@@ -172,8 +168,8 @@ const Scroll = () => {
       style={{
         background: "#000000ff",
         color: "white",
-        padding: "4rem 2rem", // Reduced padding from 8rem to 4rem
-        minHeight: "50vh", // Reduced from 100vh to 50vh
+        padding: "4rem 2rem",
+        minHeight: "50vh", 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -186,8 +182,8 @@ const Scroll = () => {
         <div 
           ref={scrollTextRef}
           style={{
-            fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", // Slightly smaller font
-            lineHeight: "1.6", // Reduced line height
+            fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", 
+            lineHeight: "1.6", 
             textAlign: "left",
           }}
         >

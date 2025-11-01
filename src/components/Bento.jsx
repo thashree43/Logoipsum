@@ -48,7 +48,7 @@ const BentoGrid = () => {
       `}</style>
 
         <div style={{ width: "100%", maxWidth: "1200px" }}>
-          {/* CSS Grid Layout - EXACT match to reference image */}
+          {/* CSS Grid Layout*/}
           <div
             style={{
               display: "grid",
@@ -58,7 +58,7 @@ const BentoGrid = () => {
               backgroundColor: "#000000",
             }}
           >
-            {/* Logo 1 - Left tall card (Diagonal stripes) - Column 1, Rows 1-2 */}
+            {/* Logo 1  */}
             <div
               className="bento-item"
               style={{
@@ -105,7 +105,7 @@ const BentoGrid = () => {
               </div>
             </div>
 
-            {/* Logo 2 - Top wide card (Main Logoipsum) - Columns 2-4, Row 1 */}
+            {/* Logo 2  */}
             <div
               className="bento-item"
               style={{
@@ -152,7 +152,7 @@ const BentoGrid = () => {
               </div>
             </div>
 
-            {/* Logo 3 - Bottom square 1 (Plus symbol) - Column 2, Row 2 */}
+            {/* Logo 3  */}
             <div
               className="bento-item"
               style={{
@@ -199,7 +199,7 @@ const BentoGrid = () => {
               </div>
             </div>
 
-            {/* Logo 4 - Bottom square 2 (IPSUM text) - Column 3, Row 2 */}
+            {/* Logo 4  */}
             <div
               className="bento-item"
               style={{
@@ -246,7 +246,7 @@ const BentoGrid = () => {
               </div>
             </div>
 
-            {/* Logo 5 - Bottom square 3 (Circle badge) - Column 4, Row 2 */}
+            {/* Logo 5*/}
             <div
               className="bento-item"
               style={{
@@ -277,7 +277,7 @@ const BentoGrid = () => {
                     maxHeight: "90px",
                     maxWidth: "100%",
                     objectFit: "contain",
-                    filter: "grayscale(1) brightness(1.5)", // Grayscale and brighten
+                    filter: "grayscale(1) brightness(1.5)", 
                   }}
                 />
               </div>

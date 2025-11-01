@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-
-// Import your logos
 import logo1 from "./../assets/logoipsum-254.png";
 import logo2 from "./../assets/logoipsum-257.png";
 import logo3 from "./../assets/logoipsum-261.png";
@@ -16,11 +14,10 @@ const FooterWithLogos = () => {
     { id: 3, src: logo3, alt: "Logoipsum" },
   ];
 
-  // Duplicate logos to create seamless infinite scroll
+  // Duplicate logos for infinite scroll
   const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   useEffect(() => {
-    // GSAP Animation
     const totalWidth = 150 * 3; 
     
     animationRef.current = gsap.to(marqueeRef.current, {
@@ -143,7 +140,7 @@ const FooterWithLogos = () => {
         </div>
       </div>
 
-      {/* Footer Content Section - No gap between sections */}
+      {/* Footer Section */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
